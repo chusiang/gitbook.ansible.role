@@ -1,0 +1,21 @@
+galaxy_info:
+  author: chusiang
+  description: Install gitbook in everyway.
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    #- name: Debian
+    #  versions:
+    #  - wheezy
+    #  - jessie
+    - name: Ubuntu
+      versions:
+      - trusty
+  galaxy_tags:
+    - gitbook
+    - node
+    - npm
+    - ubuntu
+
+dependencies: []
+
