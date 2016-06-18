@@ -10,23 +10,23 @@ before_install:
   - echo "==> Build with Docker ..."
   
   # Ubuntu
-  #- docker build -f test/Dockerfile.ubuntu1204  -t gitbook:ubuntu1204 . | tee build_result.ubuntu1204
-  - docker build -f test/Dockerfile.ubuntu1404  -t gitbook:ubuntu1404 . | tee build_result.ubuntu1404
-  #- docker build -f test/Dockerfile.ubuntu1604  -t gitbook:ubuntu1604 . | tee build_result.ubuntu1604
+  #- docker build -f tests/Dockerfile.ubuntu1204  -t gitbook:ubuntu1204 . | tee build_result.ubuntu1204
+  - docker build -f tests/Dockerfile.ubuntu1404  -t gitbook:ubuntu1404 . | tee build_result.ubuntu1404
+  #- docker build -f tests/Dockerfile.ubuntu1604  -t gitbook:ubuntu1604 . | tee build_result.ubuntu1604
   
   # Debian
-  #- docker build -f test/Dockerfile.debian7 -t gitbook:debian7 .    | tee build_result.debian7
-  #- docker build -f test/Dockerfile.debian8 -t gitbook:debian8 .    | tee build_result.debian8
+  #- docker build -f tests/Dockerfile.debian7 -t gitbook:debian7 .    | tee build_result.debian7
+  #- docker build -f tests/Dockerfile.debian8 -t gitbook:debian8 .    | tee build_result.debian8
   
   # CentOS
-  #- docker build -f test/Dockerfile.centos6 -t gitbook:centos6 .    | tee build_result.centos6
-  #- docker build -f test/Dockerfile.centos7 -t gitbook:centos7 .    | tee build_result.centos7
+  #- docker build -f tests/Dockerfile.centos6 -t gitbook:centos6 .    | tee build_result.centos6
+  #- docker build -f tests/Dockerfile.centos7 -t gitbook:centos7 .    | tee build_result.centos7
   
 script:
   - echo "==> Run Test case ..."
   
   #- grep '' build_result.ubuntu1204
-   - grep 'gitbook version: CLI version:' build_result.ubuntu1404
+  - grep 'gitbook version: CLI version:' build_result.ubuntu1404
   #- grep '' build_result.ubuntu1604
 
   #- grep '' build_result.debian7
