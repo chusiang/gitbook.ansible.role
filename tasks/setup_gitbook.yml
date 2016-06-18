@@ -1,0 +1,12 @@
+---
+
+# Install gitbook.
+- name: install gitbook with npm
+  become: yes
+  npm: name=gitbook-cli global=yes
+
+- name: install necessary package of gitbook
+  become: yes
+  raw: gitbook install
+
+# vim: ft=ansible :

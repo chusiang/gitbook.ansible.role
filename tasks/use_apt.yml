@@ -1,0 +1,19 @@
+---
+
+# Run 'apt-get update'.
+- name: update apt repo cache
+  become: yes
+  apt: update_cache=yes
+
+# Install packages with 'apt-get'.
+- name: install packages with apt
+  become: yes
+  apt: name={{ item }} state=latest
+  with_items: 
+    - build-essential
+    - git
+    - nodejs
+    - nodejs-legacy
+    - npm
+
+# vim: ft=ansible :

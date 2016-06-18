@@ -1,0 +1,11 @@
+# ansible
+ansible-retry/
+setup.retry
+roles/
+
+# docker
+build_result*
+
+# vagrant
+.vagrant
+

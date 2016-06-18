@@ -1,0 +1,22 @@
+---
+
+# Update npm.
+- name: update npm with npm
+  become: yes
+  npm: name=npm global=yes
+  ignore_errors: yes
+
+- name: clean npm cache
+  become: yes
+  command: npm cache clean -f
+
+# Install n (node version manager).
+- name: install n with npm
+  become: yes
+  npm: name=n global=yes
+
+- name: switch node to stable edition
+  become: yes
+  command: n stable
+
+# vim: ft=ansible :

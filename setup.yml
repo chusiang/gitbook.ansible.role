@@ -1,0 +1,58 @@
+#!/usr/bin/env ansible-playbook
+# ============================================================
+#  Author: chusiang / chusiang.lai (at) gmail.com
+#  Blog: http://note.drx.tw
+#  Filename: setup.yml
+#  Modified: 2016-06-18 17:50
+#  Description: Ansible Playbook fire demo for KaF2E 1607.
+#  Reference:
+#
+#   - No such file the node - http://stackoverflow.com/a/26320915 
+#
+# =========================================================== 
+
+---
+
+- name: Deploy gitbook (node, npm and n)
+  hosts: all
+
+  vars:
+    enable_roles: true
+    #enable_roles: false
+
+  roles:
+    - { role: chusiang.switch-apt-mirror, when: "enable_roles == true" }
+    - { role: chusiang.vim-and-vi-mode,   when: "enable_roles == true" }
+
+  tasks:
+    # Main
+    - name: setup gitbook
+      include: tasks/main.yml
+
+    # Check version.
+    - name: check version
+      command: node -v
+      register: node_version
+
+    - name: check npm version
+      command: npm -v
+      register: npm_version
+    
+    - name: check gitbook version 
+      command: gitbook -V
+      register: gitbook_version
+    
+    # Print version.
+    - name: print node version
+      debug:
+        msg: "node version: {{ node_version.stdout }}"
+    
+    - name: print npm version
+      debug:
+        msg: "npm version: {{ npm_version.stdout }}"
+    
+    - name: print gitbook version
+      debug:
+        msg: "gitbook version: {{ gitbook_version.stdout }}"
+
+# vim: ft=ansible :

@@ -1,0 +1,14 @@
+---
+
+
+- name: install necessary package with apt
+  include: use_apt.yml
+  when: ansible_pkg_mgr == "apt"
+
+- name: setup node
+  include: setup_node.yml
+
+- name: setup gitbook
+  include: setup_gitbook.yml
+
+# vim: ft=ansible :
