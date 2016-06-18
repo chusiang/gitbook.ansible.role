@@ -25,15 +25,15 @@ before_install:
 script:
   - echo "==> Run Test case ..."
   
-  #- grep '' build_result.ubuntu1204
-  - grep 'gitbook version: CLI version:' build_result.ubuntu1404
-  #- grep '' build_result.ubuntu1604
+  #- grep "" build_result.ubuntu1204
+  - grep "gitbook version: CLI version:" build_result.ubuntu1404
+  #- grep "" build_result.ubuntu1604
 
-  #- grep '' build_result.debian7
-  #- grep '' build_result.debian8
+  #- grep "" build_result.debian7
+  #- grep "" build_result.debian8
 
-  #- grep '' build_result.centos6
-  #- grep '' build_result.centos7
+  #- grep "" build_result.centos6
+  #- grep "" build_result.centos7
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
