@@ -17,8 +17,8 @@
   hosts: all
 
   vars:
-    enable_roles: true
-    #enable_roles: false
+    #enable_roles: true
+    enable_roles: false
 
   roles:
     - { role: chusiang.switch-apt-mirror, when: "enable_roles == true" }
