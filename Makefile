@@ -13,6 +13,7 @@ run:
 	vagrant provision
 
 clean:
-	rm -f setup.retry
+	rm -f ansible-retry/setup.retry setup.retry
+	rm -f tests/build_result.*
 	vagrant destroy -f
 
