@@ -5,6 +5,7 @@ roles/
 
 # docker
 build_result*
+build/*/output.log
 
 # vagrant
 .vagrant

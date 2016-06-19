@@ -3,7 +3,7 @@
 main: run
 
 init:
-	if [ ! -d "ansible-retry" ]; then mkdir "ansible-retry"; fi
+	#if [ ! -d "ansible-retry" ]; then mkdir "ansible-retry"; fi
 	ansible-galaxy install -f -p roles -r requirements.yml
 
 boot:
