@@ -6,8 +6,8 @@ An Ansible role of Install gitbook in everyway.
 
 Current Version:
 
-* node: 6.2.2
-* npm: 3.9.5
+* node: 5.12.0
+* npm: 3.8.6
 * gitbook-cli: 2.3.0
 * gitbook: 3.1.1
 
