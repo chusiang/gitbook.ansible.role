@@ -15,8 +15,8 @@
   become: yes
   npm: name=n global=yes
 
-- name: switch node to stable edition
+- name: switch node to v5 edition
   become: yes
-  command: n stable
+  command: n 5.12.0
 
 # vim: ft=ansible :
