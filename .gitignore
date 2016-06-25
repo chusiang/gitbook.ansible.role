@@ -4,8 +4,8 @@ setup.retry
 roles/
 
 # docker
-build_result*
-build/*/output.log
+builds/*/output.log
+tests/output.*.log
 
 # vagrant
 .vagrant

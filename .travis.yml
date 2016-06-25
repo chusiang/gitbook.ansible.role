@@ -10,30 +10,30 @@ before_install:
   - echo "==> Build with Docker ..."
   
   # Ubuntu
-  #- docker build -f tests/ubuntu12.04/Dockerfile  -t gitbook:ubuntu1204 . | tee tests/build_result.ubuntu12.04
-  - docker build -f tests/ubuntu14.04/Dockerfile  -t gitbook:ubuntu14.04 . | tee tests/build_result.ubuntu14.04
-  #- docker build -f tests/ubuntu16.04/Dockerfile  -t gitbook:ubuntu1604 . | tee tests/build_result.ubuntu16.04
+  #- docker build -f tests/ubuntu12.04/Dockerfile  -t gitbook:ubuntu1204 . | tee tests/output.ubuntu12.04.log
+  - docker build -f tests/ubuntu14.04/Dockerfile  -t gitbook:ubuntu14.04 . | tee tests/output.ubuntu14.04.log
+  #- docker build -f tests/ubuntu16.04/Dockerfile  -t gitbook:ubuntu1604 . | tee tests/output.ubuntu16.04.log
   
   # Debian
-  #- docker build -f tests/debian7/Dockerfile -t gitbook:debian7 .    | tee tests/build_result.debian7
-  #- docker build -f tests/debian8/Dockerfile -t gitbook:debian8 .    | tee tests/build_result.debian8
+  #- docker build -f tests/debian7/Dockerfile -t gitbook:debian7 .    | tee tests/output.debian7.log
+  #- docker build -f tests/debian8/Dockerfile -t gitbook:debian8 .    | tee tests/output.debian8.log
   
   # CentOS
-  #- docker build -f tests/centos6/Dockerfile -t gitbook:centos6 .    | tee tests/build_result.centos6
-  #- docker build -f tests/centos7/Dockerfile -t gitbook:centos7 .    | tee tests/build_result.centos7
+  #- docker build -f tests/centos6/Dockerfile -t gitbook:centos6 .    | tee tests/output.centos6.log
+  #- docker build -f tests/centos7/Dockerfile -t gitbook:centos7 .    | tee tests/output.centos7.log
   
 script:
   - echo "==> Run Test case ..."
   
-  #- grep "GitBook version" tests/build_result.ubuntu12.04
-  - grep "GitBook version" tests/build_result.ubuntu14.04
-  #- grep "GitBook version" tests/build_result.ubuntu16.04
+  #- grep "GitBook version" tests/output.ubuntu12.04.log
+  - grep "GitBook version" tests/output.ubuntu14.04.log
+  #- grep "GitBook version" tests/output.ubuntu16.04.log
 
-  #- grep "GitBook version" tests/build_result.debian7
-  #- grep "GitBook version" tests/build_result.debian8
+  #- grep "GitBook version" tests/output.debian7.log
+  #- grep "GitBook version" tests/output.debian8.log
 
-  #- grep "GitBook version" tests/build_result.centos6
-  #- grep "GitBook version" tests/build_result.centos7
+  #- grep "GitBook version" tests/output.centos6.log
+  #- grep "GitBook version" tests/output.centos7.log
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
