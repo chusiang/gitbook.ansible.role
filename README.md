@@ -59,3 +59,4 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 Copyright (c) chusiang from 2016 under the MIT license.
 
+<span class="Ctrl">[Enter]</span>

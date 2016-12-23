@@ -9,7 +9,7 @@
 - name: install packages with apt
   become: yes
   apt: name={{ item }} state=latest
-  with_items: 
+  with_items:
     - build-essential
     - curl
     - git
