@@ -16,5 +16,6 @@
     - nodejs
     - nodejs-legacy
     - npm
+    - rsync
 
 # vim: ft=ansible :
