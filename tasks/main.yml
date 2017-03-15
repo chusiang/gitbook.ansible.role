@@ -5,6 +5,10 @@
   include: use_apt.yml
   when: ansible_pkg_mgr == "apt"
 
+- name: install necessary package with apk
+  include: use_apk.yml
+  when: ansible_pkg_mgr == "apk"
+
 - name: setup node
   include: setup_node.yml
 

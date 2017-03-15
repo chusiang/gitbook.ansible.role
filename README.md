@@ -7,9 +7,9 @@ An Ansible role of Install gitbook in everyway.
 Current Version:
 
 * node: 5.12.0
-* npm: 3.8.6
+* npm: 3.10.3
 * gitbook-cli: 2.3.0
-* gitbook: 3.1.1
+* gitbook: 3.2.2
 
 ## Requirements
 
@@ -37,7 +37,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* chusiang/gitbook:ubuntu14.04 (lastest)
+* `chusiang/gitbook:alpine3.4 (lastest)`
+* `chusiang/gitbook:ubuntu14.04`
 
 ### Usage
 
@@ -57,6 +58,4 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ## License
 
-Copyright (c) chusiang from 2016 under the MIT license.
-
-<span class="Ctrl">[Enter]</span>
+Copyright (c) chusiang from 2016-2017 under the MIT license.

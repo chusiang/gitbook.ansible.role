@@ -9,6 +9,10 @@ before_install:
   
   - echo "==> Build with Docker ..."
   
+
+  # alpine
+  - docker build -f tests/alpine-3.4/Dockerfile -t gitbook:alpine3.4 . | tee tests/output.alpine3.4.log
+
   # Ubuntu
   #- docker build -f tests/ubuntu12.04/Dockerfile  -t gitbook:ubuntu1204 . | tee tests/output.ubuntu12.04.log
   - docker build -f tests/ubuntu14.04/Dockerfile  -t gitbook:ubuntu14.04 . | tee tests/output.ubuntu14.04.log
@@ -24,6 +28,8 @@ before_install:
   
 script:
   - echo "==> Run Test case ..."
+
+  - grep "GitBook version" tests/output.alpine3.4.log
   
   #- grep "GitBook version" tests/output.ubuntu12.04.log
   - grep "GitBook version" tests/output.ubuntu14.04.log

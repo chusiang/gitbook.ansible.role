@@ -17,3 +17,7 @@ clean:
 	rm -f tests/build_result.*
 	vagrant destroy -f
 
+# Retag and push the latest tag.
+retag_latest:
+	sh bin/retag_latest.sh
+
