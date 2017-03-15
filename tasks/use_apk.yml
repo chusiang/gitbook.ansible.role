@@ -16,5 +16,6 @@
     - gcc
     - git
     - nodejs
+    - rsync
 
 # vim: ft=ansible :
