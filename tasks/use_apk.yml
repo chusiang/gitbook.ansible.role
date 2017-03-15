@@ -1,0 +1,20 @@
+---
+
+# Run 'apk update'.
+- name: update apt repo cache
+  become: yes
+  apk: update_cache=yes
+
+# Install packages with 'apk'.
+- name: install packages with apk
+  become: yes
+  apk: name={{ item }} state=latest
+  with_items:
+    - bash
+    - build-base
+    - curl
+    - gcc
+    - git
+    - nodejs
+
+# vim: ft=ansible :
