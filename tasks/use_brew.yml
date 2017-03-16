@@ -1,0 +1,17 @@
+---
+
+# Run 'brew update'.
+- name: update homebrew repo cache
+  homebrew:
+    update_homebrew: yes
+
+# Install packages with 'brew'.
+- name: install packages with homebrew
+  homebrew: name={{ item }} state=present
+  with_items:
+    - curl
+    - git
+    - node
+    - npm
+
+# vim: ft=ansible :
