@@ -16,13 +16,13 @@
 - name: Deploy gitbook (node, npm and n)
   hosts: all
 
-  vars:
-    #enable_roles: true
-    enable_roles: false
+  #vars:
+  #  #enable_roles: true
+  #  enable_roles: false
 
-  roles:
-    - { role: chusiang.switch-apt-mirror, when: "enable_roles == true" }
-    - { role: chusiang.vim-and-vi-mode,   when: "enable_roles == true" }
+  #roles:
+  #  - { role: chusiang.switch-apt-mirror, when: enable_roles == true }
+  #  - { role: chusiang.vim-and-vi-mode,   when: enable_roles == true }
 
   tasks:
     # Main

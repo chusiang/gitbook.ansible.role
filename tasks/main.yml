@@ -9,6 +9,10 @@
   include: use_apk.yml
   when: ansible_pkg_mgr == "apk"
 
+- name: install necessary package with homebrew
+  include: use_brew.yml
+  when: ansible_pkg_mgr == "homebrew"
+
 - name: setup node
   include: setup_node.yml
 
