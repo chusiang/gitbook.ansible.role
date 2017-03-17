@@ -9,4 +9,9 @@
   become: yes
   raw: gitbook install
 
+- name: install some plugins of gitbook
+  become: yes
+  raw: "gitbook install {{ item }}"
+  with_items: "{{ gitbook_plugins }}"
+
 # vim: ft=ansible :

@@ -16,6 +16,9 @@
 - name: Deploy gitbook (node, npm and n)
   hosts: all
 
+  vars_files:
+    - defaults/main.yml
+
   #vars:
   #  #enable_roles: true
   #  enable_roles: false
