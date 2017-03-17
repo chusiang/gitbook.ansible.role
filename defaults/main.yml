@@ -1,0 +1,9 @@
+---
+
+gitbook_plugins:
+  - atoc
+  - disqus
+  - ga
+  - github
+
+# vim: ft=ansible :

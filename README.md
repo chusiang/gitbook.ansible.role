@@ -17,7 +17,15 @@ None.
 
 ## Role Variables
 
-None.
+For install some gitbook plugins.
+
+```
+gitbook_plugins:
+  - atoc
+  - disqus
+  - ga
+  - github
+```
 
 ## Dependencies
 
