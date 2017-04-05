@@ -10,6 +10,7 @@
   become: yes
   apt: name={{ item }} state=present
   with_items:
+    - bash-completion
     - build-essential
     - curl
     - git
@@ -17,5 +18,13 @@
     - nodejs-legacy
     - npm
     - rsync
+    - wget
+    - xdg-utils
+    - xz-utils
+
+- name: install calibre with tarball
+  become: yes
+  shell: sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  ignore_errors: yes
 
 # vim: ft=ansible :
