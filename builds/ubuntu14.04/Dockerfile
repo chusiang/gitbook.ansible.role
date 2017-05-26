@@ -2,41 +2,30 @@
 #
 # USAGE:
 #   $ docker build -t gitbook:ubuntu14.04 .
-#
-# Version  1.1
-#
 
-
-# pull base image
 FROM williamyeh/ansible:ubuntu14.04-onbuild
 
 MAINTAINER Chu-Siang Lai <chusiang.lai@gmail.com>
-
-
-#
-# build phase
-#
 
 # fix policy-rc.d for Docker
 # @see http://www.monblocnotes.com/node/2057
 # @see http://askubuntu.com/a/365912
 RUN sed -i -e 's/exit\s\s*101/exit 0/' /usr/sbin/policy-rc.d
 
-# init.
-RUN sudo apt-get install -y curl git make ;\
-      git clone https://github.com/chusiang/gitbook.ansible.role.git ;\
-      cd gitbook.ansible.role ;\
+RUN echo "===> Updating package cache ..."  && \
+      apt-get update
+
+RUN echo "===> Initializating ..."  && \
+      sudo apt-get install -y curl git make && \
+      git clone https://github.com/chusiang/gitbook.ansible.role.git && \
+      cd gitbook.ansible.role && \
       make init
-      
+
 ENV PLAYBOOK gitbook.ansible.role/setup.yml
-RUN ansible-playbook-wrapper -vvv
 
+RUN echo "===> Setuping with Ansible ..."  && \
+      ansible-playbook-wrapper -vvv
 
-#
-# test phase
-#
-
-#RUN echo "===> Installing curl for testing purpose..."  && \
-#    DEBIAN_FRONTEND=noninteractive  \
-#    apt-get install -y -f curl
+RUN echo "===> Removing package list ..."  && \
+      apt-get clean all
 
