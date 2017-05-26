@@ -8,7 +8,7 @@
 
 - name: clean npm cache
   become: yes
-  command: npm cache clean -f
+  command: npm cache clean
   ignore_errors: yes
 
 # Install n (node version manager).
