@@ -1,9 +1,9 @@
 ---
 
 gitbook_plugins:
-  - atoc
   - disqus
   - ga
   - github
+  - page-toc-button
 
 # vim: ft=ansible :
