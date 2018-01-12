@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "ubuntu1404" do |node|
     node.vm.box = "ubuntu/trusty64"
     node.vm.hostname = "gitbook-ubuntu1404"
-    node.vm.network "forwarded_port", guest: 4001, host: 4000
+    node.vm.network "forwarded_port", guest: 4000, host: 4001
     node.vm.provider "virtualbox" do |vb|
 		  vb.linked_clone = true
       vb.memory = "2048"
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "ubuntu1604" do |node|
     node.vm.box = "ubuntu/xenial64"
     node.vm.hostname = "gitbook-ubuntu1604"
-    node.vm.network "forwarded_port", guest: 4002, host: 4000
+    node.vm.network "forwarded_port", guest: 4000, host: 4002
     node.vm.provider "virtualbox" do |vb|
 		  vb.linked_clone = true
       vb.memory = "2048"
