@@ -9,17 +9,17 @@ galaxy_info:
     #  - wheezy
     #  - jessie
     - name: Alpine
-       - 3.6
       versions:
-        - trusty
+        - 3.6
     - name: Ubuntu
       versions:
         - trusty
   galaxy_tags:
+    - alpine
+    - git
     - gitbook
     - markdown
     - node
-    - npm
     - ubuntu
 
 dependencies: []
