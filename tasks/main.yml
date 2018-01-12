@@ -20,18 +20,6 @@
 - name: provision the node and npm
   block:
 
-  - name: update npm with npm
-    become: true
-    npm:
-      name: npm
-      global: yes
-    ignore_errors: yes
-
-  - name: clean npm cache
-    become: true
-    command: npm cache clean -f
-    ignore_errors: yes
-
   # n: node version manager.
   - name: install n with npm
     become: true
