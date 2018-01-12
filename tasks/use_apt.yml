@@ -1,13 +1,13 @@
 ---
 
-# Run 'apt-get update'.
+# Run 'sudo apt update'.
 - name: update apt repo cache
   become: true
   apt:
     update_cache: yes
 
-# Install packages with 'apt-get'.
-- name: install packages with apt
+# Run 'sudo apk install ...'.
+- name: install necessary package with apt
   become: true
   apt:
     name: '{{ item }}'

@@ -4,22 +4,51 @@
 ###########
 
 # Install necessary package.
-- name: install necessary package with apt
+- name: include tasks for apt system
   import_tasks: use_apt.yml
   when: ansible_pkg_mgr == 'apt'
 
-- name: install necessary package with apk
+- name: include tasks for apk system
   import_tasks: use_apk.yml
   when: ansible_pkg_mgr == 'apk'
 
-- name: install necessary package with homebrew
+- name: include tasks for brew system
   import_tasks: use_brew.yml
   when: ansible_pkg_mgr == 'homebrew'
+
+# Change the node, npm reversion.
+- name: provision the node and npm
+  block:
+
+  - name: update npm with npm
+    become: true
+    npm:
+      name: npm
+      global: yes
+    ignore_errors: yes
+
+  - name: clean npm cache
+    become: true
+    command: npm cache clean -f
+    ignore_errors: yes
+
+  # n: node version manager.
+  - name: install n with npm
+    become: true
+    npm:
+      name: n
+      global: yes
+
+  - name: switch node to specific edition
+    become: true
+    command: n '{{ node_reversion }}'
+
+  when: ansible_pkg_mgr != 'apk'
 
 # Application
 #############
 
-- name: setup gitbook
-  import_tasks: setup_gitbook.yml
+- name: setup the gitbook
+  import_tasks: gitbook.yml
 
 # vim: ft=ansible :

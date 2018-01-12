@@ -1,13 +1,13 @@
 ---
 
 # Run 'apk update'.
-- name: update apt repo cache
+- name: update apk repo cache
   become: true
   apk:
     update_cache: yes
 
-# Install packages with 'apk'.
-- name: install packages with apk
+# Run 'sudo apk add ...'.
+- name: install necessary package with apk
   become: true
   apk:
     name: '{{ item }}'

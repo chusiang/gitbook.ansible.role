@@ -5,8 +5,8 @@
   homebrew:
     update_homebrew: yes
 
-# Install packages with 'brew'.
-- name: install packages with homebrew
+# Run 'brew install ...'.
+- name: install necessary package with homebrew
   homebrew:
     name: '{{ item }}'
     state: present

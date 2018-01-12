@@ -1,0 +1,16 @@
+---
+
+# GitBook
+##########
+
+- name: install necessary package for gitbook with npm
+  become: true
+  npm:
+    name: '{{ item }}'
+    global: yes
+  with_items: '{{ gitbook_npm_packages }}'
+
+- name: install some gitbook plugins
+  command: 'gitbook install {{ gitbook_plugins }}'
+
+# vim: ft=ansible :
