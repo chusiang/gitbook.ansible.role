@@ -2,17 +2,52 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.define "gitbook.local", primary: true do |node|
-    node.vm.box = "ubuntu/trusty64"
+
+  config.vm.define "alpine36", primary: true do |node|
+    node.vm.box = "generic/alpine36"
+    node.vm.hostname = "gitbook-alpine36"
     node.vm.network "forwarded_port", guest: 4000, host: 4000
-
     node.vm.provider "virtualbox" do |vb|
-      vb.memory = "1024"
+		  vb.linked_clone = true
+      vb.memory = "2048"
     end
-
+    node.vm.provision "shell",
+      inline: "apk update && apk add python"
     node.vm.provision "ansible" do |ansible|
       ansible.playbook = "setup.yml"
-      ansible.sudo = true
+      ansible.become = true
     end
   end
+
+  config.vm.define "ubuntu1404" do |node|
+    node.vm.box = "ubuntu/trusty64"
+    node.vm.hostname = "gitbook-ubuntu1404"
+    node.vm.network "forwarded_port", guest: 4000, host: 4000
+    node.vm.provider "virtualbox" do |vb|
+		  vb.linked_clone = true
+      vb.memory = "2048"
+    end
+    node.vm.provision "ansible" do |ansible|
+      ansible.playbook = "setup.yml"
+      ansible.become = true
+    end
+  end
+
+  config.vm.define "ubuntu1604" do |node|
+    node.vm.box = "ubuntu/xenial64"
+    node.vm.hostname = "gitbook-ubuntu1604"
+    #config.ssh.username = 'ubuntu'
+    #node.vm.network "forwarded_port", guest: 4000, host: 4000
+    node.vm.provider "virtualbox" do |vb|
+		  vb.linked_clone = true
+      vb.memory = "2048"
+    end
+    node.vm.provision "shell",
+      inline: "apt-get update && apt-get install -y python"
+    node.vm.provision "ansible" do |ansible|
+      ansible.playbook = "setup.yml"
+      ansible.become = true
+    end
+  end
+
 end

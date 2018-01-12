@@ -2,16 +2,18 @@
 
 # Install gitbook.
 - name: install gitbook with npm
-  become: yes
-  npm: name=gitbook-cli global=yes
+  become: true
+  npm:
+    name: gitbook-cli
+    global: yes
 
 - name: install necessary package of gitbook
-  become: yes
+  become: true
   raw: gitbook install
 
 - name: install some plugins of gitbook
-  become: yes
-  raw: "gitbook install {{ item }}"
-  with_items: "{{ gitbook_plugins }}"
+  become: true
+  raw: 'gitbook install {{ item }}'
+  with_items: '{{ gitbook_plugins }}'
 
 # vim: ft=ansible :

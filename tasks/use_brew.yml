@@ -7,7 +7,9 @@
 
 # Install packages with 'brew'.
 - name: install packages with homebrew
-  homebrew: name={{ item }} state=present
+  homebrew:
+    name: '{{ item }}'
+    state: present
   with_items:
     - curl
     - git

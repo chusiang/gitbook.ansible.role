@@ -1,22 +1,23 @@
 ---
 
-
+# Provision.
 - name: install necessary package with apt
-  include: use_apt.yml
-  when: ansible_pkg_mgr == "apt"
+  import_tasks: use_apt.yml
+  when: ansible_pkg_mgr == 'apt'
 
 - name: install necessary package with apk
-  include: use_apk.yml
-  when: ansible_pkg_mgr == "apk"
+  import_tasks: use_apk.yml
+  when: ansible_pkg_mgr == 'apk'
 
 - name: install necessary package with homebrew
-  include: use_brew.yml
-  when: ansible_pkg_mgr == "homebrew"
+  import_tasks: use_brew.yml
+  when: ansible_pkg_mgr == 'homebrew'
 
 - name: setup node
-  include: setup_node.yml
+  import_tasks: setup_node.yml
 
+# Application.
 - name: setup gitbook
-  include: setup_gitbook.yml
+  import_tasks: setup_gitbook.yml
 
 # vim: ft=ansible :

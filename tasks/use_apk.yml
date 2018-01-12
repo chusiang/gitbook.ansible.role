@@ -2,13 +2,16 @@
 
 # Run 'apk update'.
 - name: update apt repo cache
-  become: yes
-  apk: update_cache=yes
+  become: true
+  apk:
+    update_cache: yes
 
 # Install packages with 'apk'.
 - name: install packages with apk
-  become: yes
-  apk: name={{ item }} state=present
+  become: true
+  apk:
+    name: '{{ item }}'
+    state: present
   with_items:
     - bash
     - build-base
@@ -16,6 +19,7 @@
     - gcc
     - git
     - nodejs
+    - nodejs-npm
     - rsync
 
 # vim: ft=ansible :

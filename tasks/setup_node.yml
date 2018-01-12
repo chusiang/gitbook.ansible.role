@@ -2,22 +2,30 @@
 
 # Update npm.
 - name: update npm with npm
-  become: yes
-  npm: name=npm global=yes
+  become: true
+  #npm:
+  #  name: npm
+  #  global: yes
+  command: /usr/local/bin/npm install -g npm
   ignore_errors: yes
 
 - name: clean npm cache
-  become: yes
-  command: npm cache clean
+  become: true
+  command: /usr/local/bin/npm cache clean --force
   ignore_errors: yes
+  changed_when: false
 
 # Install n (node version manager).
 - name: install n with npm
   become: yes
-  npm: name=n global=yes
+  npm:
+    name: n
+    global: yes
 
 - name: switch node to v5 edition
   become: yes
   command: n 5.12.0
+  async: 60
+  poll: 10
 
 # vim: ft=ansible :
