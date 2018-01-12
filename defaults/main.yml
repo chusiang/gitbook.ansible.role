@@ -1,9 +1,15 @@
 ---
 
+node_reversion: '6.10.3'
+
+gitbook_npm_packages:
+  - gitbook-cli
+  - svgexport
+
 gitbook_plugins:
-  - atoc
   - disqus
   - ga
   - github
+  - page-toc-button
 
 # vim: ft=ansible :

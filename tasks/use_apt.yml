@@ -1,14 +1,17 @@
 ---
 
-# Run 'apt-get update'.
+# Run 'sudo apt update'.
 - name: update apt repo cache
-  become: yes
-  apt: update_cache=yes
+  become: true
+  apt:
+    update_cache: yes
 
-# Install packages with 'apt-get'.
-- name: install packages with apt
-  become: yes
-  apt: name={{ item }} state=present
+# Run 'sudo apk install ...'.
+- name: install necessary package with apt
+  become: true
+  apt:
+    name: '{{ item }}'
+    state: present
   with_items:
     - bash-completion
     - build-essential
@@ -23,8 +26,10 @@
     - xz-utils
 
 - name: install calibre with tarball
-  become: yes
+  become: true
   shell: sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  register: install_calibre
+  changed_when: '"Run "calibre" to start calibre" not in install_calibre.stdout'
   ignore_errors: yes
 
 # vim: ft=ansible :

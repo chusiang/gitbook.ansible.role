@@ -9,40 +9,18 @@ before_install:
   
   - echo "==> Build with Docker ..."
   
-
-  # alpine
-  - docker build -f tests/alpine-3.4/Dockerfile -t gitbook:alpine3.4 . | tee tests/output.alpine3.4.log
-
-  # Ubuntu
-  #- docker build -f tests/ubuntu12.04/Dockerfile  -t gitbook:ubuntu1204 . | tee tests/output.ubuntu12.04.log
+  - docker build -f tests/alpine-3/Dockerfile -t gitbook:alpine3 . | tee tests/output.alpine3.log
   - docker build -f tests/ubuntu14.04/Dockerfile  -t gitbook:ubuntu14.04 . | tee tests/output.ubuntu14.04.log
   #- docker build -f tests/ubuntu16.04/Dockerfile  -t gitbook:ubuntu1604 . | tee tests/output.ubuntu16.04.log
-  
-  # Debian
-  #- docker build -f tests/debian7/Dockerfile -t gitbook:debian7 .    | tee tests/output.debian7.log
-  #- docker build -f tests/debian8/Dockerfile -t gitbook:debian8 .    | tee tests/output.debian8.log
-  
-  # CentOS
-  #- docker build -f tests/centos6/Dockerfile -t gitbook:centos6 .    | tee tests/output.centos6.log
-  #- docker build -f tests/centos7/Dockerfile -t gitbook:centos7 .    | tee tests/output.centos7.log
   
 script:
   - echo "==> Run Test case ..."
 
-  - grep "GitBook version" tests/output.alpine3.4.log
-  
-  #- grep "GitBook version" tests/output.ubuntu12.04.log
+  - grep "GitBook version" tests/output.alpine3.log
   - grep "GitBook version" tests/output.ubuntu14.04.log
   #- grep "GitBook version" tests/output.ubuntu16.04.log
-
-  #- grep "GitBook version" tests/output.debian7.log
-  #- grep "GitBook version" tests/output.debian8.log
-
-  #- grep "GitBook version" tests/output.centos6.log
-  #- grep "GitBook version" tests/output.centos7.log
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   hipchat:
     secure: "DTnXg490xbC3HB3Qs/8aSDSRlrVUBWrDzywuo6+PJrTrQFZbAbn1Xeey9wmibkIB6AigZew+EeBTcmIkactb6zH8cTwOBAaZIAiU2SgMjCBkMXOPblvCd9DToL8ul5/jkwu8ZfV91ncrujczajZDPA1qaKhU3LKqpCVCHIxptRyX2FRsiGS1/2IJSWM/GdVWHzRr4OdYcLixqPlC40iQf6sDlCJAlGmkNSGyMDJ9nOlPKH0fRXW+DBSUMcbYFYO7v3AfDlBibWcaCohhVfaMeYt0BGuQ0cDaxMPPqJbvBySHB04OGFbjFCnQgQe9Q/e7SlUctoKumzloIwcoJOnKtZpHuayXYegRSbUuvVhm0E2a3OHjeuenKdjddF1lOAuUyBal3Jlqy1yIwLafW6lCNaR2+xyJ/tcL2Ds/SSTFnvzxZH1j43acJ59mkFjrA6TQUt81sOG4nlFjHOoD+DriCY1tc6WVP3IltjZUyQBvOrg08DtnTHCJYMG6Yep9hg9y4WO7Hi/3eWiA4z8vYNzOBOz2xVKlqyWTTELwSp04PsnZHxmRInoXdPYK0Jmyh3qNtslcw4l5oHb0htFwyqCPBWbjb0wm/5OrIVcnFXYt9k3/uDOCzz9QsPhulg5Ei+159gNMn4w9djzLVK4IUkzBf/X4PwwH7h56WccHsCGchsc="
-

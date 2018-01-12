@@ -6,10 +6,10 @@ An Ansible role of Install gitbook for `Ubuntu`, `Apline` and `macOS`.
 
 Current Version:
 
-* node: 5.12.0
-* npm: 3.10.3
-* gitbook-cli: 2.3.0
-* gitbook: 3.2.2
+* node: 6.10.3
+* npm: 3.10.10
+* gitbook-cli: 2.3.2
+* gitbook: 3.2.3
 
 ## Requirements
 
@@ -45,7 +45,7 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* `chusiang/gitbook:alpine3.4 (lastest)`
+* `chusiang/gitbook:alpine3 (lastest)`
 * `chusiang/gitbook:ubuntu14.04`
 
 ### Usage
@@ -66,4 +66,4 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ## License
 
-Copyright (c) chusiang from 2016-2017 under the MIT license.
+Copyright (c) chusiang from 2016-2018 under the MIT license.
