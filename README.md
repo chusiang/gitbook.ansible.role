@@ -17,14 +17,18 @@ None.
 
 ## Role Variables
 
-For install some gitbook plugins.
-
 ```
+node_reversion: '6.10.3'
+
+gitbook_npm_packages:
+  - gitbook-cli
+  - svgexport
+
 gitbook_plugins:
-  - atoc
   - disqus
   - ga
   - github
+  - page-toc-button
 ```
 
 ## Dependencies
@@ -45,8 +49,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* `chusiang/gitbook:alpine3 (lastest)`
-* `chusiang/gitbook:ubuntu14.04`
+* `chusiang/gitbook:alpine3 (lastest)` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/alpine3/Dockerfile))
+* `chusiang/gitbook:ubuntu14.04` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/ubuntu14.04/Dockerfile))
 
 ### Usage
 
