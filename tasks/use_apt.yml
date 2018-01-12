@@ -28,6 +28,8 @@
 - name: install calibre with tarball
   become: true
   shell: sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  register: install_calibre
+  changed_when: '"Run "calibre" to start calibre" not in install_calibre.stdout'
   ignore_errors: yes
 
 # vim: ft=ansible :

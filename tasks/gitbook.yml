@@ -12,5 +12,7 @@
 
 - name: install some gitbook plugins
   command: 'gitbook install {{ gitbook_plugins }}'
+  register: install_gitbook_plugins
+  changed_when: '"nothing to install!" not in install_gitbook_plugins.stdout'
 
 # vim: ft=ansible :
