@@ -1,6 +1,9 @@
 ---
 
-# Provision.
+# Provision
+###########
+
+# Install necessary package.
 - name: install necessary package with apt
   import_tasks: use_apt.yml
   when: ansible_pkg_mgr == 'apt'
@@ -13,10 +16,9 @@
   import_tasks: use_brew.yml
   when: ansible_pkg_mgr == 'homebrew'
 
-- name: setup node
-  import_tasks: setup_node.yml
+# Application
+#############
 
-# Application.
 - name: setup gitbook
   import_tasks: setup_gitbook.yml
 

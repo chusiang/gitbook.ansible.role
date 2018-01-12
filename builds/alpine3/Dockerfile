@@ -8,10 +8,10 @@ FROM williamyeh/ansible:alpine3-onbuild
 
 MAINTAINER Chu-Siang Lai <chusiang.lai@gmail.com>
 
-RUN echo "===> Updating package cache ..."  && \
+RUN echo "==> Updating package cache ..."  && \
       apk update 
 
-RUN echo "===> Initializating ..."  && \
+RUN echo "==> Initializating ..."  && \
       apk add --no-cache curl git make && \
       git clone https://github.com/chusiang/gitbook.ansible.role.git && \
       cd gitbook.ansible.role && \
@@ -19,9 +19,9 @@ RUN echo "===> Initializating ..."  && \
       
 ENV PLAYBOOK gitbook.ansible.role/setup.yml
 
-RUN echo "===> Setuping with Ansible ..."  && \
+RUN echo "==> Setuping with Ansible ..."  && \
       ansible-playbook-wrapper -vvv
 
-RUN echo "===> Removing package list ..."  && \
+RUN echo "==> Removing package list ..."  && \
       rm -rf /var/cache/apk/*
 
