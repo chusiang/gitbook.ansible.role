@@ -9,7 +9,7 @@ Current Version:
 * node: 6.10.3
 * npm: 3.10.10
 * gitbook-cli: 2.3.2
-* gitbook: 3.2.3
+* gitbook: 2.6.7
 
 ## Requirements
 
