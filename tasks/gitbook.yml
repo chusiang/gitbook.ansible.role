@@ -10,6 +10,11 @@
     global: yes
   with_items: '{{ gitbook_npm_packages }}'
 
+- name: fetch the specific gitbook version
+  command: 'gitbook fetch {{ gitbook_specific_version }}'
+  register: install_gitbook_specific_version
+  changed_when: '"has been installed" in install_gitbook_specific_version'
+
 - name: install some gitbook plugins
   command: 'gitbook install {{ gitbook_plugins }}'
   register: install_gitbook_plugins

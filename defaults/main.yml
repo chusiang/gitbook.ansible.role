@@ -2,6 +2,9 @@
 
 node_reversion: '6.10.3'
 
+# The latest gitbook is unstable, so I fetch the stable one.
+gitbook_specific_version: 2.6.7
+
 gitbook_npm_packages:
   - gitbook-cli
   - svgexport
