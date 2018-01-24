@@ -20,6 +20,9 @@ None.
 ```
 node_reversion: '6.10.3'
 
+# The latest gitbook is unstable, so I fetch to stable one.
+gitbook_specific_version: 2.6.7
+
 gitbook_npm_packages:
   - gitbook-cli
   - svgexport
@@ -49,8 +52,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* `chusiang/gitbook:alpine3 (lastest)` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/alpine3/Dockerfile))
-* `chusiang/gitbook:ubuntu14.04` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/ubuntu14.04/Dockerfile))
+* `chusiang/gitbook:2.6.7 (lastest)` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/alpine-3/Dockerfile))
+* `chusiang/gitbook:ubuntu-14.04` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/ubuntu-14.04/Dockerfile))
 
 ### Usage
 

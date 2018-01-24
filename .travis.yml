@@ -1,26 +1,18 @@
 language: bash
 sudo: true
 services:
-  - docker
-
+- docker
 before_install:
-  - docker info
-  - docker version
-  
-  - echo "==> Build with Docker ..."
-  
-  - docker build -f tests/alpine-3/Dockerfile -t gitbook:alpine3 . | tee tests/output.alpine3.log
-  - docker build -f tests/ubuntu14.04/Dockerfile  -t gitbook:ubuntu14.04 . | tee tests/output.ubuntu14.04.log
-  #- docker build -f tests/ubuntu16.04/Dockerfile  -t gitbook:ubuntu1604 . | tee tests/output.ubuntu16.04.log
-  
+- docker info
+- docker version
+- echo "==> Build with Docker ..."
+- docker build -f tests/alpine-3/Dockerfile     -t gitbook:alpine-3      . | tee tests/output.alpine-3.log
+- docker build -f tests/ubuntu-14.04/Dockerfile -t gitbook:ubuntu-14.04  . | tee tests/output.ubuntu-14.04.log
 script:
-  - echo "==> Run Test case ..."
-
-  - grep "GitBook version" tests/output.alpine3.log
-  - grep "GitBook version" tests/output.ubuntu14.04.log
-  #- grep "GitBook version" tests/output.ubuntu16.04.log
-
+- echo "==> Run Test case ..."
+- grep "GitBook version" tests/output.alpine-3.log
+- grep "GitBook version" tests/output.ubuntu-14.04.log
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
-  hipchat:
-    secure: "DTnXg490xbC3HB3Qs/8aSDSRlrVUBWrDzywuo6+PJrTrQFZbAbn1Xeey9wmibkIB6AigZew+EeBTcmIkactb6zH8cTwOBAaZIAiU2SgMjCBkMXOPblvCd9DToL8ul5/jkwu8ZfV91ncrujczajZDPA1qaKhU3LKqpCVCHIxptRyX2FRsiGS1/2IJSWM/GdVWHzRr4OdYcLixqPlC40iQf6sDlCJAlGmkNSGyMDJ9nOlPKH0fRXW+DBSUMcbYFYO7v3AfDlBibWcaCohhVfaMeYt0BGuQ0cDaxMPPqJbvBySHB04OGFbjFCnQgQe9Q/e7SlUctoKumzloIwcoJOnKtZpHuayXYegRSbUuvVhm0E2a3OHjeuenKdjddF1lOAuUyBal3Jlqy1yIwLafW6lCNaR2+xyJ/tcL2Ds/SSTFnvzxZH1j43acJ59mkFjrA6TQUt81sOG4nlFjHOoD+DriCY1tc6WVP3IltjZUyQBvOrg08DtnTHCJYMG6Yep9hg9y4WO7Hi/3eWiA4z8vYNzOBOz2xVKlqyWTTELwSp04PsnZHxmRInoXdPYK0Jmyh3qNtslcw4l5oHb0htFwyqCPBWbjb0wm/5OrIVcnFXYt9k3/uDOCzz9QsPhulg5Ei+159gNMn4w9djzLVK4IUkzBf/X4PwwH7h56WccHsCGchsc="
+  slack:
+    secure: HRHqoYovbod2bb8mP7h2u+lcvUwuvEduNLER/5ptZNtfsHY3Tu5dVlKFw7akkLdkX0thhZ/Qpw/n4ZLL+oDDMiLkAtcSj3dEPI/6YPWpqktiARIBEUY4sbs35G2OuUh2YacStfr9FjQAknHYVt56E+k5NYn2SnJeYO0pjJ1hlcTImGPlNPF42gPDFnm0VHzL1nIWzzqWQwLzGCl3oGDf43fKCftH2RO28vchpgZ4MVwxWDad3KFH0R1JEW03aBGWORm2PAxUZBs9cFYeV0EBSu/dO3n/e4oYDxMPQIQ4NDpQoO5vvVsMf60cvSbyMb4FevNUMVGssufQDBaTxX40lkZsCHGxbbVenOr2htO7oekg+JZODViRH4WPaSRMcMpwAFQY10YkZfE6FAkLSF4YJ1l6EeoXQjFuJxIuEjKLsi8Q5tuZHTBgWpP12Z/ug70vxgnpcohU3uaVuv/+5l8Fwclm/IQ6WNmk7V7vjG5KzU/vEb1cY1PnNjswu6wR8ZmWKoT1uL+xXSUFzf7uz3knkwi9FxAkfM3duGCXcPwhqf/LQpEZCT3vRPp8POTaXZCJYR3PMtxnO4Vpk7Kb+upJF//rY09EA/Azs0WQm0o/L/4r3Fhopg/P7Mf6nZaJT2ve0gbQ8/bgnH+fsVDuRO8sM+jteYwSoRLGDhAFiv4LAck=
