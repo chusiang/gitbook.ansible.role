@@ -54,8 +54,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* `chusiang/gitbook:2.6.7` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-2.6/Dockerfile))
-* `chusiang/gitbook:3.2.3`, `lastest` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-3.2/Dockerfile))
+* `chusiang/gitbook:2.6` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-2.6/Dockerfile))
+* `chusiang/gitbook:3.2`, `lastest` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-3.2/Dockerfile))
 * `chusiang/gitbook:ubuntu-14.04` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/ubuntu-14.04/Dockerfile))
 
 ### Usage
