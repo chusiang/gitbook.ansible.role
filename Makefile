@@ -25,4 +25,4 @@ clean:
 
 # Retag and push the latest tag.
 retag_latest:
-	sh bin/retag_latest.sh
+	sh files/retag_latest.sh
