@@ -1,9 +1,5 @@
 # Dockerfile for building image that contains software stack provisioned by Ansible.
-#
-# USAGE:
-#   $ docker build -t gitbook:alpine3 .
 
-# pull base image
 FROM williamyeh/ansible:alpine3-onbuild
 
 MAINTAINER Chu-Siang Lai <chusiang@drx.tw>

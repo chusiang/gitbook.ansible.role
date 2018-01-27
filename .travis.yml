@@ -6,12 +6,14 @@ before_install:
 - docker info
 - docker version
 - echo "==> Build with Docker ..."
-- docker build -f tests/alpine-3/Dockerfile     -t gitbook:alpine-3      . | tee tests/output.alpine-3.log
-- docker build -f tests/ubuntu-14.04/Dockerfile -t gitbook:ubuntu-14.04  . | tee tests/output.ubuntu-14.04.log
+- docker build -f tests/gitbook-2.6/Dockerfile  -t gitbook:2.6          . | tee tests/gitbook-2.6.log
+- docker build -f tests/gitbook-3.2/Dockerfile  -t gitbook:3.2          . | tee tests/gitbook-3.2.log
+- docker build -f tests/ubuntu-14.04/Dockerfile -t gitbook:ubuntu-14.04 . | tee tests/gitbook-ubuntu-14.04.log
 script:
 - echo "==> Run Test case ..."
-- grep "GitBook version" tests/output.alpine-3.log
-- grep "GitBook version" tests/output.ubuntu-14.04.log
+- grep "GitBook version" tests/gitbook-2.6.log
+- grep "GitBook version" tests/gitbook-3.2.log
+- grep "GitBook version" tests/gitbook-ubuntu-14.04.log
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
