@@ -9,7 +9,7 @@ Current Version:
 * node: 6.10.3
 * npm: 3.10.10
 * gitbook-cli: 2.3.2
-* gitbook: 2.6.7
+* gitbook: 3.2.3
 
 ## Requirements
 
@@ -20,7 +20,9 @@ None.
 ```
 node_reversion: '6.10.3'
 
-# The latest gitbook is unstable, so I fetch to stable one.
+# If we want to use the specific version, we need setting the
+# 'gitbook_switch_specific_version' variable to 'true'.
+gitbook_switch_specific_version: 'false'
 gitbook_specific_version: 2.6.7
 
 gitbook_npm_packages:
@@ -52,7 +54,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* `chusiang/gitbook:2.6.7 (lastest)` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/alpine-3/Dockerfile))
+* `chusiang/gitbook:2.6.7` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-2.6/Dockerfile))
+* `chusiang/gitbook:3.2.3`, `lastest` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/gitbook-3.2/Dockerfile))
 * `chusiang/gitbook:ubuntu-14.04` ([Dockerfile](https://github.com/chusiang/gitbook.ansible.role/blob/master/builds/ubuntu-14.04/Dockerfile))
 
 ### Usage
