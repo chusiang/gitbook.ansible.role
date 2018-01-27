@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCKER_IMAGE="chusiang/gitbook"
-DOCKER_TAG="3.2.3"
+DOCKER_TAG="3.2"
 
 echo 'Pull alpine image.'
 docker pull $DOCKER_IMAGE:$DOCKER_TAG
