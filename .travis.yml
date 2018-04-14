@@ -1,20 +1,23 @@
 language: bash
 sudo: true
 services:
-- docker
+  - docker
+
 before_install:
-- docker info
-- docker version
-- echo "==> Build with Docker ..."
-- docker build -f tests/gitbook-2.6/Dockerfile  -t gitbook:2.6          . | tee tests/gitbook-2.6.log
-- docker build -f tests/gitbook-3.2/Dockerfile  -t gitbook:3.2          . | tee tests/gitbook-3.2.log
-- docker build -f tests/ubuntu-14.04/Dockerfile -t gitbook:ubuntu-14.04 . | tee tests/gitbook-ubuntu-14.04.log
+  - docker info
+  - docker version
+  - echo "==> Build with Docker ..."
+  - docker build -f tests/gitbook-2.6/Dockerfile  -t gitbook:2.6          . | tee tests/gitbook-2.6.log
+  - docker build -f tests/gitbook-3.2/Dockerfile  -t gitbook:3.2          . | tee tests/gitbook-3.2.log
+  - docker build -f tests/ubuntu-14.04/Dockerfile -t gitbook:ubuntu-14.04 . | tee tests/gitbook-ubuntu-14.04.log
+
 script:
-- echo "==> Run Test case ..."
-- grep "GitBook version" tests/gitbook-2.6.log
-- grep "GitBook version" tests/gitbook-3.2.log
-- grep "GitBook version" tests/gitbook-ubuntu-14.04.log
+  - echo "==> Run Test case ..."
+  - grep "GitBook version" tests/gitbook-2.6.log
+  - grep "GitBook version" tests/gitbook-3.2.log
+  - grep "GitBook version" tests/gitbook-ubuntu-14.04.log
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
-    secure: p1f/0B4J2Hmhz0tUlF665YI1vy5LKscdT9deC9425sFxqoU3JsHHgt6MjiAzTHiG5oo+d/gfZ7wwyxpTl5RzfeIz4e3dpq+Wi//QwovudGu7Xos5pUaQYBievkRnVwainqTOXXiKpeWGYYfLnWfxvzCvyBoj/DrPR/C07NW4YoJtcLQszsORZGZko4I2ERvWaF6tJnx/EjpWUelA8Z6WfcDxdn0KOYqfrfEmrWECBP7VOPYunRWx4CBYW0Jz/mPIS4KwXCtFCJPXsaCpbCVH6KBaeXVOY+P4qltsxva3R6/sAQK4f87hK2Ijim23UY3Lsyvd/nm/8RMRFSEHpfCRgZfJQJqaBfFmXncaYu1CguzzxjU2/0/pkuTLNnPCypoKsZXbF9ulLlsvlSQEv0DlVgIL9TiVib2AzE1qE5mVtnHA3gbGrdgd7aQkANO9zcv3Dsimlgbp0jsrqpcAC7gqKvhkHcdwepj9XYjiiJC75kw82KNGfhnobaoALh0OoQj4vhQLWfTnUlRWGAN8a/d4wxIT8CVIl6gHc2rbVWutAruI3kslQ9Hp+1ypvOI4qjhctcMdFLKeB25oTMqZ6ZAp4fnzmWcMJs+n4Ff4cClunHpQ4ibuut+zxQSsonJO0BD92IOAurx0FWorV/5D79PPPS4yq6hfBPYXRI8iItWSRcA=
+    secure: Yq/luD6dsIE3t49wkLAhEm8eVWblDvJnEDUIaP2lpg1GZf0rGUixm3nu0WE9eqvP89zF6JToJEO5twfwyE+AsRuuy4I7LkEK+yWRMQ4cbU576zIT1613lPwnJUPbyj1fDvlKS0ZhX+B3HTtSp96KqXlRNurhP1eI7JPYc4kQ7cDqSkpvK8U26CzWs3rzkrAF4X58zeuwqIqHfVCpfFwnzgUgdWWixN2aEZO92Uv4k6Rnu/1/TnVXFLdb60eKOvjGGRDbRR/wZCQm1Q7sUgTffuJNbX8x4BPRF+QUmgKOcqALovgZuRZCffr760qt6+nrZGDCn2pSCoYJSMJ30qoL6rlAWbaoLAfHVKNRmRLhtOpmXn0YbQg2s/WJKWFai68ya+ykg+QqOxeomH7s2f4L/jgvs7qRMEOF4dMBn/1NdTYnVbGQtQ870mLjsoZ+BIRh327rLCjR437a9qkUz4KciCJDZlz5FdIL9LVenEXio7esjBDiHbSyg0RMEoMmYP/Jib6RJ3k4HyTyYqPCQ6qaSGyCk/lri06k4GteFITxB81oMiv4gDEnoi+BYO/y3J+FlpPPInLrAZcV6P37ugoyZYEVv8+XeKR9A0C5XIrmKlfvNPmiRTBOMWCOzwZe4kvhGdSpfPJ7oAbX74iiQL5yT4DZ1iLE1sqmZVlEAey1FsY=
