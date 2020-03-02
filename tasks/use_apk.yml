@@ -10,16 +10,7 @@
 - name: install necessary package with apk
   become: true
   apk:
-    name: '{{ item }}'
+    name: '{{ gitbook_necessary_apk_packages }}'
     state: present
-  with_items:
-    - bash
-    - build-base
-    - curl
-    - gcc
-    - git
-    - nodejs
-    - nodejs-npm
-    - rsync
 
-# vim: ft=ansible :
+# vim: ft=yaml.ansible :

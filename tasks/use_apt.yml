@@ -10,20 +10,8 @@
 - name: install necessary package with apt
   become: true
   apt:
-    name: '{{ item }}'
+    name: '{{ gitbook_necessary_apt_packages }}'
     state: present
-  with_items:
-    - bash-completion
-    - build-essential
-    - curl
-    - git
-    - nodejs
-    - nodejs-legacy
-    - npm
-    - rsync
-    - wget
-    - xdg-utils
-    - xz-utils
 
 - name: install calibre with tarball
   become: true
@@ -32,4 +20,4 @@
   changed_when: '"Run "calibre" to start calibre" not in install_calibre.stdout'
   ignore_errors: yes
 
-# vim: ft=ansible :
+# vim: ft=yaml.ansible :

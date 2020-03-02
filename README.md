@@ -25,6 +25,31 @@ node_reversion: '6.10.3'
 gitbook_switch_specific_version: 'false'
 gitbook_specific_version: 2.6.7
 
+# Alpine Linux.
+gitbook_necessary_apk_packages:
+  - bash
+  - build-base
+  - curl
+  - gcc
+  - git
+  - nodejs
+  - nodejs-npm
+  - rsync
+
+# Debian / Ubuntu.
+gitbook_necessary_apt_packages:
+  - bash-completion
+  - build-essential
+  - curl
+  - git
+  - nodejs
+  - nodejs-legacy
+  - npm
+  - rsync
+  - wget
+  - xdg-utils
+  - xz-utils
+
 gitbook_npm_packages:
   - gitbook-cli
   - svgexport
