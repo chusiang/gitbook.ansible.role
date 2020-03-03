@@ -63,6 +63,9 @@ gitbook_npm_packages:
   - gitbook-cli
   - svgexport
 
+# Reference:
+#
+# * Official: https://github.com/GitbookIO?utf8=%E2%9C%93&q=plugin&type=&language=
 gitbook_plugins:
   - disqus
   - ga
