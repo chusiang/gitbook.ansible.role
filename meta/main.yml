@@ -2,7 +2,7 @@ galaxy_info:
   author: chusiang
   description: Install gitbook in everyway.
   license: MIT
-  min_ansible_version: 2.4
+  min_ansible_version: 2.8
   platforms:
     - name: Alpine
     - name: Ubuntu

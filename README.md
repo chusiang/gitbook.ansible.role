@@ -13,7 +13,7 @@ Current Version:
 
 ## Requirements
 
-None.
+1. Ansible v2.8.0: The `npm` module start support the `unsafe_perm` args from v2.8.
 
 ## Role Variables
 
@@ -110,4 +110,4 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ## License
 
-Copyright (c) chusiang from 2016-2018 under the MIT license.
+Copyright (c) chusiang from 2016-2020 under the MIT license.
