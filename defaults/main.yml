@@ -32,6 +32,8 @@ gitbook_necessary_apt_packages:
   - xdg-utils
   - xz-utils
 
+gitbook_apt_cache_valid_time: 3600
+
 # macOS.
 gitbook_necessary_brew_packages:
   - curl
