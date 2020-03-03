@@ -8,6 +8,7 @@
   npm:
     name: '{{ item }}'
     global: yes
+    unsafe_perm: yes
   with_items: '{{ gitbook_npm_packages }}'
 
 - name: fetch the specific gitbook version
@@ -21,4 +22,4 @@
   register: install_gitbook_plugins
   changed_when: '"nothing to install!" not in install_gitbook_plugins.stdout'
 
-# vim: ft=ansible :
+# vim: ft=yaml.ansible :
