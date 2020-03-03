@@ -5,14 +5,14 @@ FROM chusiang/ansible:2.9
 MAINTAINER Chu-Siang Lai <chusiang@drx.tw>
 
 RUN echo "==> Updating package cache ..."     && \
-      apk update 
+      apk update
 
 RUN echo "==> Initializating ..."             && \
       apk add --no-cache curl git make        && \
-      git clone https://github.com/chusiang/gitbook.ansible.role.git && \
-      cd gitbook.ansible.role
-      
+      git clone https://github.com/chusiang/gitbook.ansible.role.git
+
 RUN echo "==> Setuping with Ansible ..."      && \
+      cd gitbook.ansible.role                 && \
       ansible-playbook -c local setup.yml
       # ansible-playbook -c local setup.yml -vvv
 
