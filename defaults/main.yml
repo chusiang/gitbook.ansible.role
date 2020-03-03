@@ -24,6 +24,7 @@ gitbook_necessary_apt_packages:
   - build-essential
   - curl
   - git
+  - libnss3-dev
   - nodejs
   - nodejs-legacy
   - npm
