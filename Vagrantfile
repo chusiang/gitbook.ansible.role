@@ -19,6 +19,11 @@ instances = [
     :host_port  => "4008"
   },
   {
+    :name       => "alpine310",
+    :image      => "generic/alpine310",
+    :host_port  => "4010"
+  },
+  {
     :name       => "ubuntu1404",
     :image      => "ubuntu/trusty64",
     :host_port  => "4014"
