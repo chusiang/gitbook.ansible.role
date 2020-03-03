@@ -8,12 +8,7 @@
 # Run 'brew install ...'.
 - name: install necessary package with homebrew
   homebrew:
-    name: '{{ item }}'
+    name: '{{ gitbook_necessary_brew_packages  }}'
     state: present
-  with_items:
-    - curl
-    - git
-    - node
-    - npm
 
-# vim: ft=ansible :
+# vim: ft=yaml.ansible :

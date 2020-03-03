@@ -32,6 +32,13 @@ gitbook_necessary_apt_packages:
   - xdg-utils
   - xz-utils
 
+# macOS.
+gitbook_necessary_brew_packages:
+  - curl
+  - git
+  - node
+  - npm
+
 gitbook_npm_packages:
   - gitbook-cli
   - svgexport
