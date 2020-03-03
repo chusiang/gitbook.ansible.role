@@ -50,5 +50,6 @@ gitbook_plugins:
   - ga
   - github
   - page-toc-button
+  - search-plus
 
 # vim: ft=yaml.ansible :
