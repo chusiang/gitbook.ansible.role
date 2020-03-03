@@ -6,8 +6,8 @@ An Ansible role of Install gitbook for `Ubuntu`, `Apline` and `macOS`.
 
 Current Version:
 
-* node: 8.14.0
-* npm: 6.4.1
+* node: 10.19.0
+* npm: 6.13.4
 * gitbook-cli: 2.3.2
 * gitbook: 3.2.3
 
@@ -18,11 +18,11 @@ None.
 ## Role Variables
 
 ```
-node_reversion: '8.14.0'
+node_reversion: '10.19.0'
 
 # If we want to use the specific version, we need setting the
 # 'gitbook_switch_specific_version' variable to 'true'.
-gitbook_switch_specific_version: 'false'
+gitbook_switch_specific_version: False
 gitbook_specific_version: 2.6.7
 
 # Alpine Linux.
@@ -42,13 +42,22 @@ gitbook_necessary_apt_packages:
   - build-essential
   - curl
   - git
+  - libnss3-dev
   - nodejs
-  - nodejs-legacy
   - npm
   - rsync
   - wget
   - xdg-utils
   - xz-utils
+
+gitbook_apt_cache_valid_time: 3600
+
+# macOS.
+gitbook_necessary_brew_packages:
+  - curl
+  - git
+  - node
+  - npm
 
 gitbook_npm_packages:
   - gitbook-cli
