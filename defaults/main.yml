@@ -26,7 +26,6 @@ gitbook_necessary_apt_packages:
   - git
   - libnss3-dev
   - nodejs
-  - nodejs-legacy
   - npm
   - rsync
   - wget
