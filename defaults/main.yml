@@ -1,6 +1,6 @@
 ---
 
-node_reversion: '6.10.3'
+node_reversion: '8.14.0'
 
 # If we want to use the specific version, we need setting the
 # 'gitbook_switch_specific_version' variable to 'true'.
