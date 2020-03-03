@@ -4,7 +4,7 @@ node_reversion: '6.10.3'
 
 # If we want to use the specific version, we need setting the
 # 'gitbook_switch_specific_version' variable to 'true'.
-gitbook_switch_specific_version: 'false'
+gitbook_switch_specific_version: False
 gitbook_specific_version: 2.6.7
 
 # Alpine Linux.

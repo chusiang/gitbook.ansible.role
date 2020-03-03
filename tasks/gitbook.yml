@@ -15,7 +15,7 @@
   command: 'gitbook fetch {{ gitbook_specific_version }}'
   register: install_gitbook_specific_version
   changed_when: '"has been installed" in install_gitbook_specific_version'
-  when: 'gitbook_switch_specific_version == "true"'
+  when: gitbook_switch_specific_version
 
 - name: install some gitbook plugins
   command: 'gitbook install {{ gitbook_plugins }}'
