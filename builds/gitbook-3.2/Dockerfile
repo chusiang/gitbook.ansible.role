@@ -1,6 +1,6 @@
 # Dockerfile for building image that contains software stack provisioned by Ansible.
 
-FROM williamyeh/ansible:alpine3-onbuild
+FROM chusiang/ansible:2.9
 
 MAINTAINER Chu-Siang Lai <chusiang@drx.tw>
 
@@ -10,17 +10,18 @@ RUN echo "==> Updating package cache ..."     && \
 RUN echo "==> Initializating ..."             && \
       apk add --no-cache curl git make        && \
       git clone https://github.com/chusiang/gitbook.ansible.role.git && \
-      cd gitbook.ansible.role                 && \
-      make init
+      cd gitbook.ansible.role
       
-ENV PLAYBOOK gitbook.ansible.role/setup.yml
-
 RUN echo "==> Setuping with Ansible ..."      && \
-      ansible-playbook-wrapper -vvv
+      ansible-playbook -c local setup.yml
+      # ansible-playbook -c local setup.yml -vvv
 
 RUN echo "==> Removing something ..."         && \
       cd /                                    && \
       rm -rf /var/cache/apk/*                 && \
-      rm -rf /tmp/gitbook.ansible.role        && \
-      rm -rf /tmp/calibre-installer-cache
+      rm -rf /srv/gitbook.ansible.role        && \
+      rm -rf /srv/calibre-installer-cache
 
+WORKDIR /srv
+
+CMD [ "gitbook", "--version" ]

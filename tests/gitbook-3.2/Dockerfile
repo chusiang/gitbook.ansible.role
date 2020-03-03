@@ -1,16 +1,20 @@
 # Dockerfile for building image that contains software stack provisioned by Ansible.
 
-FROM williamyeh/ansible:alpine3-onbuild
+FROM chusiang/ansible:2.9
 
 MAINTAINER Chu-Siang Lai <chusiang@drx.tw>
 
 RUN echo "==> Updating package cache ..."  && \
-      apk update 
+      apk update
 
-ENV PLAYBOOK setup.yml
+COPY  .  /srv
 
 RUN echo "==> Setuping with Ansible ..."  && \
-      ansible-playbook-wrapper -vvv
+      ansible-playbook -c local setup.yml
 
 RUN echo "==> Removing package list ..."  && \
       rm -rf /var/cache/apk/*
+
+WORKDIR /srv
+
+CMD [ "gitbook", "--version" ]
