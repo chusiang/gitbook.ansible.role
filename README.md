@@ -6,8 +6,8 @@ An Ansible role of Install gitbook for `Ubuntu`, `Apline` and `macOS`.
 
 Current Version:
 
-* node: 6.10.3
-* npm: 3.10.10
+* node: 8.14.0
+* npm: 6.4.1
 * gitbook-cli: 2.3.2
 * gitbook: 3.2.3
 
@@ -18,7 +18,7 @@ None.
 ## Role Variables
 
 ```
-node_reversion: '6.10.3'
+node_reversion: '8.14.0'
 
 # If we want to use the specific version, we need setting the
 # 'gitbook_switch_specific_version' variable to 'true'.

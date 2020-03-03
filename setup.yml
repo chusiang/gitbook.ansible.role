@@ -59,4 +59,4 @@
       debug:
         msg: "gitbook version: {{ gitbook_version.stdout }}"
 
-# vim: ft=ansible :
+# vim: ft=yaml.ansible :
